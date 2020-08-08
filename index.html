@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js/react.development.js"></script>
+    <script src="js/react-dom.development.js"></script>
+    <script src="js/babel.min.js"></script>
+    <link rel="stylesheet" href="css/main.css">
+    <title>React_table</title>
+</head>
+
+<body>
+    <div class="head">
+        <h1>COVID-19 CASES</h1>
+    </div>
+    <div class="container">
+        <table>
+            <thead>
+                <th>NO</th>
+                <th>COUNTRY</th>
+                <th>CONFIRMED CASES</th>
+                <th>DEATH</th>
+                <th>RECOVERED</th>
+                <th>ACTIVE CASES</th>
+            </thead>
+            <tbody id="root"></tbody>
+        </table>
+        <script type="text/jsx">
+
+            const data =[
+                     {id: 1, no: 1, country: "Italy", confirmed:3474, death: 472, recovered: 2812, active: 190},
+                     {no: 2, country: "Australia", confirmed: 113, death: 3, recovered: 110, active:0},
+                    {no: 3, country: "Peru", confirmed: 4603, death: 81, recovered: 0, active: 4522},
+                    {no: 4, country: "Chile", confirmed: 86, death: 1, recovered: 74, active: 11},
+                    {no: 5, country: "Pakistan", confirmed: 2124, death: 57, recovered: 1854, active: 213},
+                    {no: 6, country: "Germany", confirmed: 37752, death: 1858, recovered: 34889, active: 1005},
+                    {no: 7, country: "Brazil", confirmed: 187892, death: 3843, recovered: 169322, active: 14727},
+                    {no: 8, country: "Mexico", confirmed: 14222, death: 2735, recovered: 10733, active: 754},
+                    {no: 9, country: "Mexico", confirmed: 5143, death: 208, recovered: 3755, active: 1180},
+                    {no: 10, country: "Spain", confirmed: 3051, death: 224, recovered: 1533, active: 1294}
+           
+            ];
+
+                function Covid(props){
+                    console.log(props)
+                    return(
+                        <tr>
+                            <td>{props.no}</td>
+                            <td>{props.country}</td>
+                            <td>{props.confirmed}</td>
+                            <td>{props.death}</td>
+                            <td>{props.recovered}</td>
+                            <td>{props.active}</td>
+                        </tr>
+                    );
+                }
+
+            let list = data.map(i=> <Covid key={i.id} no={i.no} country={i.country} confirmed={i.confirmed} death={i.death} recovered={i.recovered} active={i.active}/>)
+            ReactDOM.render(
+                 <React.StrictMode>
+                    {list}
+                </React.StrictMode>, document.getElementById("root"));
+         
+        </script>
+    </div>
+</body>
+
+</html>

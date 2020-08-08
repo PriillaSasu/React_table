@@ -1,0 +1,17 @@
+.head{
+    margin-left: 40%;
+    color: brown;
+}
+.container{
+    margin-left: 25%;
+}
+
+table{
+    width: 70%;
+    border-spacing: 30px;
+    position: relative left ;
+    text-align: center;
+    background-color: rgb(216, 216, 216);
+    border: 1px solid;
+
+}
